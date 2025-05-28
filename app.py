@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, redirect, url_for
 import os
+from generate_video import generate_video_with_text
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
@@ -18,6 +19,7 @@ def upload():
     if image:
         image_path = os.path.join(UPLOAD_FOLDER, image.filename)
         image.save(image_path)
+        video_filename = generate_video_with_text(image_path, text)
         return f"Image Uploaded!! Text: {text}"
     return "No Image uploaded."
 
