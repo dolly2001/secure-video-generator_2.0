@@ -1,6 +1,7 @@
 # secure-video-generator_2.0
 A secure web app to generate a downloadable video using image + text (and audio later), with OpenCV and Flask.
 
+```
 🧰 Final Tech Stack
 🔙 Backend:
 Python 3.x
@@ -19,7 +20,7 @@ JavaScript – form handling and file download logic
 Git + GitHub – version control and hosting
 .gitignore – exclude certs/, env/, __pycache__, etc.
 requirements.txt – for dependency management
-
+```
 
 🗂️ Folder Structure
 ```
