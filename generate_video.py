@@ -2,7 +2,7 @@ import cv2
 from datetime import datetime
 import os
 
-GENERATED_FOLDER = 'generated_videos'
+GENERATED_FOLDER = 'static/videos'
 os.makedirs(GENERATED_FOLDER, exist_ok=True)
 
 def generate_video_with_text(image_path, text):
@@ -19,8 +19,12 @@ def generate_video_with_text(image_path, text):
         frame = img.copy()
         cv2.putText(frame, text, (50, height - 50), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (255, 255, 255), 2, cv2.LINE_AA)
         out.write(frame)
-
     out.release()
+    print(f"Image shape: {img.shape}")
+    print(f"Saving video to: {video_path}")
+    print("Writing frames...")
+
     return video_path
+
 
 

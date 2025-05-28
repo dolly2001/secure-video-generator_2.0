@@ -20,10 +20,16 @@ def upload():
         image_path = os.path.join(UPLOAD_FOLDER, image.filename)
         image.save(image_path)
         video_filename = generate_video_with_text(image_path, text)
-        return f"Image Uploaded!! Text: {text}"
+        
+        filename = os.path.basename(video_filename)
+
+        return redirect(url_for('download_page', filename=filename))
+    
     return "No Image uploaded."
 
-
+@app.route('/download/<filename>')
+def download_page(filename):
+    return render_template('download.html', filename=filename)
 
 
 
