@@ -26,5 +26,5 @@ def generate_video_with_text(image_path, text):
 
     return video_path
 
-
+    
 
