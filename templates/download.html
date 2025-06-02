@@ -9,11 +9,13 @@
 </head>
 <body>
     <h2>Generated video</h2>
-    <video width="500" controls>
+    <video width="500" controls style="margin-top: 20px;">
         <source src="{{ url_for('static', filename='videos/' + filename)}}" type="video/mp4">
         your browser does not support the video tag
     </video>
     <br><br>
-    <a href="{{ url_for('static', filename='videos/' + filename)}}" download>Download Video</a>
+    <a href="{{ url_for('static', filename='videos/' + filename)}}" download>
+        <button style="margin-top: 20px;">Download Video</button>
+    </a>
 </body>
 </html>
